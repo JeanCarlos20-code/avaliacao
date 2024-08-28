@@ -1,0 +1,37 @@
+<div class="container">
+  <!-- Contêiner Flex para alinhar o formulário e a informação do funcionário -->
+  <div class="form-and-info">
+    <!-- Contêiner Flex para alinhar o big-circle verticalmente com os círculos de avaliação -->
+    <div class="employee-info">
+      <div class="big-circle" #bigCircle>
+        <p>Nome: {{ employee.name }}</p>
+        <p>Idade: {{ employee.age }}</p>
+        <p>Avaliação: {{ employee.currentEvaluation }}</p>
+      </div>
+      <!-- Círculos de avaliações em uma coluna abaixo do big-circle -->
+      <div class="evaluations" *ngFor="let eval of employee.evaluations">
+        <p class="circle" #evalCircle></p>
+        <div class="evaluation-content">
+          <div class="evaluation-header">
+            <p class="reviewer-name">{{ eval.reviewerName + ' - ' + eval.value }}</p>
+          </div>
+          <div class="evaluation-description">
+            <p>{{ eval.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="checkbox-filter">
+      <section class="left" [formGroup]="toppings">
+        <p><mat-checkbox formControlName="starOne">Horrível ★</mat-checkbox></p>
+        <p><mat-checkbox formControlName="starTwo">Ruim ★★</mat-checkbox></p>
+        <p><mat-checkbox formControlName="starThree">Normal ★★★</mat-checkbox></p>
+      </section>
+      <section class="right" [formGroup]="toppings">
+        <p><mat-checkbox formControlName="starFour">Bom ★★★★</mat-checkbox></p>
+        <p><mat-checkbox formControlName="starFive">Ótimo ★★★★★</mat-checkbox></p>
+      </section>
+    </div>
+  </div>
+  <app-menu [menuItems]="menuItems"></app-menu>
+</div>

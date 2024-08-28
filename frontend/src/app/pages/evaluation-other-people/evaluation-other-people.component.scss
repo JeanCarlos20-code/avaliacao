@@ -75,10 +75,26 @@
   top: 0.6vw;
 }
 
-.employee-form {
+.checkbox-filter {
+  display: flex;
+  justify-content: space-between;
   position: absolute;
-  padding-left: 20rem;
-  flex-direction: column;
+  padding-left: 25vw;
+  padding-top: 7vh;
+
+  .left,
+  .right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left {
+    margin-right: 1vh;
+  }
+
+  .checkbox-filter p {
+    margin: 0;
+  }
 }
 
 .evaluation-header {

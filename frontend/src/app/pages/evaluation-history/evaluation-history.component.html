@@ -1,6 +1,7 @@
 <div class="container mt-4">
+  <app-menu [menuItems]="menuItems"></app-menu>
   <h2>Histórico de Avaliações</h2>
-  <div *ngIf="avaliacoes.length > 0; else noData">
+  <div *ngIf="evaluations.length > 0; else noData">
     <table class="table">
       <thead>
         <tr>
@@ -11,12 +12,12 @@
         </tr>
       </thead>
       <tbody>
-        <ng-container *ngFor="let avaliacao of avaliacoes; let i = index">
+        <ng-container *ngFor="let evaluation of evaluations; let i = index">
           <tr (click)="toggleSubtable(i)" [ngClass]="{'table-active': selectedRowIndex === i}" class="table-striped">
             <td>{{ i + 1 }}</td>
-            <td>{{ avaliacao.name }}</td>
-            <td>{{ avaliacao.value }}</td>
-            <td>{{ avaliacao.description }}</td>
+            <td>{{ evaluation.name }}</td>
+            <td>{{ evaluation.value }}</td>
+            <td>{{ evaluation.description }}</td>
           </tr>
           <!-- Subtabela para mostrar os detalhes da média -->
           <tr *ngIf="selectedRowIndex === i">
@@ -32,10 +33,10 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>{{ calculaMedia(avaliacao, 1) }}</td>
-                    <td>{{ calculaMedia(avaliacao, 2) }}</td>
-                    <td>{{ calculaMedia(avaliacao, 3) }}</td>
-                    <td>{{ calculaMedia(avaliacao, 4) }}</td>
+                    <td>{{ calculaMedia(evaluation, 1) }}</td>
+                    <td>{{ calculaMedia(evaluation, 2) }}</td>
+                    <td>{{ calculaMedia(evaluation, 3) }}</td>
+                    <td>{{ calculaMedia(evaluation, 4) }}</td>
                   </tr>
                 </tbody>
               </table>
@@ -48,5 +49,4 @@
   <ng-template #noData>
     <p>Nenhuma avaliação encontrada.</p>
   </ng-template>
-  <app-menu [menuItems]="menuItems"></app-menu>
 </div>

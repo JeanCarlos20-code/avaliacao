@@ -12,8 +12,8 @@ interface Food {
 export class EmployeeAvaliationComponent {
   menuItems = [
     { label: 'Home', link: '/home-cnpj' },
-    { label: 'Histórico de avaliação', link: '#' },
-    { label: 'Avaliação de outras pessoas', link: '#' }
+    { label: 'Histórico de avaliação', link: '/home-cnpj/historic' },
+    { label: 'Avaliação de outras pessoas', link: '/home-cnpj/evaluation-other-people' }
   ];
 
   employee = {
@@ -28,8 +28,6 @@ export class EmployeeAvaliationComponent {
       { reviewerName: 'Carlos', description: 'Avaliação 3', value: 4.5 },
     ]
   };
-
-  lines: { x1: number, y1: number, x2: number, y2: number }[] = [];
 
   @ViewChildren('bigCircle, evalCircle') circles!: QueryList<ElementRef>;
 
