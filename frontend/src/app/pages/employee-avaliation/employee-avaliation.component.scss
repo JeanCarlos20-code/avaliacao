@@ -1,0 +1,110 @@
+.container {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin-top: 35px;
+  position: relative;
+  align-items: center;
+  height: 100vh;
+}
+
+.circle-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.form-and-info {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 7em;
+  gap: 100px;
+  margin-bottom: 10vh;
+}
+
+.employee-info {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3vh;
+}
+
+.big-circle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: rgb(180, 225, 240);
+  position: relative;
+}
+
+.evaluations {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 3vh 0;
+  left: 3.6rem;
+}
+
+.circle {
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: lightblue;
+  margin: 3vh 0;
+  left: 3rem;
+  position: absolute;
+}
+
+.evaluation-content {
+  flex-direction: column;
+  width: 70vw;
+  /* ajusta a largura de acordo com o tamanho da viewport */
+  max-width: 100%;
+  /* impede que o elemento ultrapasse a largura da viewport */
+  height: 100px;
+  left: 7rem;
+  position: relative;
+  top: 0.6vw;
+}
+
+.employee-form {
+  position: absolute;
+  left: 25rem;
+  flex-direction: column;
+}
+
+.evaluation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40%;
+  background-color: #d3d3d3;
+  /* Cor do retângulo pequeno */
+  padding: 5px;
+}
+
+.reviewer-name {
+  margin: 0;
+  font-size: 12px;
+}
+
+.evaluation-description {
+  height: 60%;
+  background-color: #f0f8ff;
+  /* Cor do retângulo maior */
+  padding: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+}

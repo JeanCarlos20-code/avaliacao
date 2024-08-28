@@ -1,0 +1,45 @@
+<div class="container">
+  <!-- Contêiner Flex para alinhar o formulário e a informação do funcionário -->
+  <div class="form-and-info">
+    <!-- Contêiner Flex para alinhar o big-circle verticalmente com os círculos de avaliação -->
+    <div class="employee-info">
+      <div class="big-circle" #bigCircle>
+        <p>Nome: {{ employee.name }}</p>
+        <p>Idade: {{ employee.age }}</p>
+        <p>Avaliação: {{ employee.currentEvaluation }}</p>
+      </div>
+      <!-- Círculos de avaliações em uma coluna abaixo do big-circle -->
+      <div class="evaluations" *ngFor="let eval of employee.evaluations">
+        <p class="circle" #evalCircle></p>
+        <div class="evaluation-content">
+          <div class="evaluation-header">
+            <p class="reviewer-name">{{ eval.reviewerName + ' - ' + eval.value }}</p>
+          </div>
+          <div class="evaluation-description">
+            <p>{{ eval.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="employee-form">
+      <h4>Escolha uma pessoa</h4>
+      <mat-form-field>
+        <mat-label>Funcionário na empresa</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{ food.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <h4>Digite o CPF</h4>
+      <form class="text-box">
+        <mat-form-field>
+          <mat-label>CPF</mat-label>
+          <input matInput placeholder="Digite o CPF">
+        </mat-form-field>
+      </form>
+    </div>
+  </div>
+  <app-menu [menuItems]="menuItems"></app-menu>
+</div>

@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.sidebar {
+  height: 100vh;
+  padding-top: 20px;
+}
+
+.main-content {
+  margin-top: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.sidebar li i {
+  margin-right: 10px;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% - 250px);
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  width: calc(100% - 250px);
+  margin-top: 60px;
+  /* Ajustar conforme o tamanho do header */
+}
+
+.employee-list,
+.top-bottom-employees {
+  margin-bottom: 30px;
+}
+
+.top-bottom-employees {
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-bottom-employees>div {
+  width: 48%;
+}

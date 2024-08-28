@@ -1,0 +1,13 @@
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <h4>Avaliação</h4>
+  </div>
+  <ul class="nav flex-column">
+    <li class="nav-item" *ngFor="let item of menuItems">
+      <a class="nav-link" [href]="item.link">{{ item.label }}</a>
+    </li>
+  </ul>
+  <div class="logout-button-container">
+    <button class="btn btn-danger w-100">Sair</button>
+  </div>
+</nav>
