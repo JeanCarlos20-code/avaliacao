@@ -4,13 +4,15 @@ export class EvaluationCreateTablePhysicalPerson1724956888091
   implements MigrationInterface
 {
   public async up(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.query(`CREATE EXTENSION IF NOT EXISTS "uuid-ossp";`);
+
     await queryRunner.createTable(
       new Table({
         name: 'physical_person',
         columns: [
           {
             name: 'id_physical_person',
-            type: 'string',
+            type: 'uuid',
             isPrimary: true,
             isGenerated: true,
             generationStrategy: 'uuid',

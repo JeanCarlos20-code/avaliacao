@@ -3,17 +3,17 @@ import { EntitySchema } from 'typeorm';
 
 export const PhysicalPersonSchema = new EntitySchema<PhysicalPerson>({
   target: PhysicalPerson,
-  name: 'Classification',
+  name: 'PhysicalPerson',
   synchronize: false,
-  tableName: 'quality_classification',
+  tableName: 'physical_person',
   columns: {
     id: {
       type: 'int',
       primary: true,
-      name: 'id_quality_classification',
+      name: 'id_physical_person',
     },
     cpf: {
-      name: 'description',
+      name: 'cpf',
       type: 'varchar',
     },
     email: {
