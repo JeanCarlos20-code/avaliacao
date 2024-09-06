@@ -1,8 +1,7 @@
 import { Body, Controller, HttpStatus, Post } from '@nestjs/common';
 import { ApiBearerAuth, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { CreatePhysicalPersonService } from 'src/core/application/physical-person/create-physical-person';
 import { PhysicalPersonDto } from '../dtos/physical-person.dto';
-import { PhysicalPerson } from 'src/core/domain/class/physical-person';
+import { CreatePhysicalPersonService } from 'src/core/application/physical-person/use-cases/create-physical-person/create-physical-person';
 
 @ApiTags('physical-person')
 @Controller('physical-person')
@@ -15,10 +14,10 @@ export class CreatePhysicalPersonController {
   @ApiBearerAuth()
   @ApiResponse({
     status: HttpStatus.CREATED,
-    description: 'Create an indicator',
+    description: 'Create an physical-person',
     isArray: true,
   })
   async create(@Body() body: PhysicalPersonDto) {
-    await this.createPhysicalPersonService.execute(body as PhysicalPerson);
+    await this.createPhysicalPersonService.execute(body);
   }
 }

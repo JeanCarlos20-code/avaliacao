@@ -1,14 +1,11 @@
 <div class="container">
-  <!-- Contêiner Flex para alinhar o formulário e a informação do funcionário -->
   <div class="form-and-info">
-    <!-- Contêiner Flex para alinhar o big-circle verticalmente com os círculos de avaliação -->
     <div class="employee-info">
       <div class="big-circle" #bigCircle>
         <p>Nome: {{ employee.name }}</p>
         <p>Idade: {{ employee.age }}</p>
         <p>Avaliação: {{ employee.currentEvaluation }}</p>
       </div>
-      <!-- Círculos de avaliações em uma coluna abaixo do big-circle -->
       <div class="evaluations" *ngFor="let eval of employee.evaluations">
         <p class="circle" #evalCircle></p>
         <div class="evaluation-content">

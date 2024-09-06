@@ -28,13 +28,26 @@ services:
     ports:
       - '5432:5432'
     volumes:
-      - .docker/dbdatatest:/var/lib/postgresql/data
+      - .docker/dbdata:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=jean
       - POSTGRES_PASSWORD=docker
       - POSTGRES_DB=evaluation_dev
     networks:
       - app-network
+
+  nginx:
+    build:
+      context: ./src/config/nginx
+      dockerfile: Dockerfile
+    image: jeansouza007/evaluation-prod
+    container_name: nginx
+    networks:
+      - app-network
+    ports:
+      - "8080:80"
+    depends_on:
+      - app
 
   pgadmin:
     image: dpage/pgadmin4
